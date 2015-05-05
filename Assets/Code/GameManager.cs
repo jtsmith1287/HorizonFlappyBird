@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds(Random.Range(0.5f, 2f));
 
 		foreach (GameObject obstacle in ObstacleArray) {
-			if (!obstacle.active) {
+			if (!obstacle.activeSelf) {
 				obstacle.transform.position = new Vector2(20, 0);
 				obstacle.SetActive(true);
 			}
