@@ -8,9 +8,9 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-
-		for (int i = ObstacleArray.Length; i < ObstacleArray.Length; i++) {
+		for (int i = 0; i < ObstacleArray.Length; i++) {
 			ObstacleArray[i] = Instantiate(ObstaclePrefab);
+			ObstacleArray[i].SetActive(false);
 		}
 
 		StartCoroutine(RePositionNewObstacleRoutine());
@@ -23,12 +23,15 @@ public class GameManager : MonoBehaviour {
 
 	IEnumerator RePositionNewObstacleRoutine() {
 
-		yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+		while (enabled) {
+			yield return new WaitForSeconds(Random.Range(.5f, 2.5f));
 
-		foreach (GameObject obstacle in ObstacleArray) {
-			if (!obstacle.activeSelf) {
-				obstacle.transform.position = new Vector2(20, 0);
-				obstacle.SetActive(true);
+			foreach (GameObject obstacle in ObstacleArray) {
+				if (!obstacle.activeSelf) {
+					obstacle.transform.position = new Vector2(20, 0);
+					obstacle.SetActive(true);
+					break;
+				}
 			}
 		}
 	}
