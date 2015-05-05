@@ -3,6 +3,10 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+	public GameObject ScoreText;
+	public GameObject PauseButton;
+	public GameObject PlayButton;
+	public GameObject PauseText;
 	public GameObject ObstaclePrefab;
 	GameObject[] ObstacleArray = new GameObject[10];
 
