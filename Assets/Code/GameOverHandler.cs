@@ -8,7 +8,9 @@ public class GameOverHandler : MonoBehaviour {
 
 		if (entity.tag == "Player") {
 			Time.timeScale = 0;
-			GameObject.Find("GameOverText").GetComponent<Text>().enabled = true;
+			Text text = GameObject.Find("GameOverText").GetComponent<Text>();
+			text.text = "Game Over!\nScore: " + GameManager.Score.ToString();
+			text.enabled = true;
 			StartCoroutine(ResetLevel());
 
 		}
@@ -16,7 +18,7 @@ public class GameOverHandler : MonoBehaviour {
 
 	IEnumerator ResetLevel() {
 
-		float time = Time.realtimeSinceStartup + 1.5f;
+		float time = Time.realtimeSinceStartup + 3f;
 
 		while (Time.realtimeSinceStartup < time)
 			yield return null;

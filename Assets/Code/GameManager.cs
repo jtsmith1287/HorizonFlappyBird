@@ -65,15 +65,6 @@ public class GameManager : MonoBehaviour {
 
 	public void UpdateScore() {
 
-		if (ScoreText == null) {
-			Debug.Log("ScoreText is null");
-		} else if (ScoreText.GetComponent<Text>() == null) {
-			Debug.Log("Text component");
-		} else if (Score == null) {
-			Debug.Log("Score is null??? What???");
-		} else {
-			Debug.Log("Nothing is null...");
-			ScoreText.text = string.Format("Score: {0}", Score);
-		}
+		ScoreText.text = string.Format("Score: {0}", Score);
 	}
 }
