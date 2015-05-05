@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -35,5 +36,21 @@ public class GameManager : MonoBehaviour {
 				obstacle.SetActive(true);
 			}
 		}
+	}
+
+	public void PauseGame() {
+
+		PauseButton.GetComponent<Image>().enabled = false;
+		PlayButton.GetComponent<Image>().enabled = true;
+		PauseText.GetComponent<Text>().enabled = true;
+		Time.timeScale = 0f;
+	}
+
+	public void ResumeGame() {
+
+		PlayButton.GetComponent<Image>().enabled = false;
+		PauseButton.GetComponent<Image>().enabled = true;
+		PauseText.GetComponent<Text>().enabled = false;
+		Time.timeScale = 1f;
 	}
 }

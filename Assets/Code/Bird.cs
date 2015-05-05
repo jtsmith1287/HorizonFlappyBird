@@ -17,11 +17,20 @@ public class Bird : MonoBehaviour {
 
 		if (Input.GetKeyDown(FlapKey)) {
 			FlapWings();
+		} 
+		if (Input.GetKeyUp(FlapKey)) {
+			ReturnWings();
 		}
 	}
 
 	void FlapWings() {
 
+		gameObject.GetComponent<SpriteRenderer>().sprite = FlapWingsUp;
 		BirdPhysics.velocity = new Vector2(0, FlapStrength);
+	}
+
+	void ReturnWings() {
+
+		gameObject.GetComponent<SpriteRenderer>().sprite = FlapWingsDown;
 	}
 }
