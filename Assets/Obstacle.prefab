@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21298354}
   - 50: {fileID: 5006392}
   - 61: {fileID: 6129604}
+  - 114: {fileID: 11475650}
   m_Layer: 0
   m_Name: tree-log
   m_TagString: Untagged
@@ -61,6 +62,7 @@ GameObject:
   - 212: {fileID: 21230380}
   - 50: {fileID: 5082348}
   - 61: {fileID: 6152992}
+  - 114: {fileID: 11453462}
   m_Layer: 0
   m_Name: tree-log 1
   m_TagString: Untagged
@@ -157,7 +159,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 112966}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -170,7 +172,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 191550}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -200,6 +202,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+--- !u!114 &11453462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d274ac2ccea1748a3c29caa20f985b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11475650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d274ac2ccea1748a3c29caa20f985b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21230380
 SpriteRenderer:
   m_ObjectHideFlags: 1
