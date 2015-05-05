@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+
+		Time.timeScale = 0f;
+
 		for (int i = 0; i < ObstacleArray.Length; i++) {
 			ObstacleArray[i] = Instantiate(ObstaclePrefab);
 			ObstacleArray[i].SetActive(false);
