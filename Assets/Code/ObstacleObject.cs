@@ -7,7 +7,7 @@ public class ObstacleObject : MonoBehaviour {
 	Vector2 Destination = new Vector2(-20, 0);
 
 	// Use this for initialization
-	void Start() {
+	void OnEnable() {
 
 		Vector2 newPosition = transform.position;
 		newPosition.y = Random.Range(-5.5f, 0f);
