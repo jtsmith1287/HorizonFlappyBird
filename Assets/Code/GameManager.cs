@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject ScoreText;
+	public static int Score = 0;
+
+	public Text ScoreText;
 	public GameObject PauseButton;
 	public GameObject PlayButton;
 	public GameObject PauseText;
@@ -14,6 +16,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 
+		Score = 0;
 		Time.timeScale = 0f;
 
 		for (int i = 0; i < ObstacleArray.Length; i++) {
@@ -58,5 +61,19 @@ public class GameManager : MonoBehaviour {
 		PauseButton.GetComponent<Image>().enabled = true;
 		PauseText.GetComponent<Text>().enabled = false;
 		Time.timeScale = 1f;
+	}
+
+	public void UpdateScore() {
+
+		if (ScoreText == null) {
+			Debug.Log("ScoreText is null");
+		} else if (ScoreText.GetComponent<Text>() == null) {
+			Debug.Log("Text component");
+		} else if (Score == null) {
+			Debug.Log("Score is null??? What???");
+		} else {
+			Debug.Log("Nothing is null...");
+			ScoreText.text = string.Format("Score: {0}", Score);
+		}
 	}
 }
